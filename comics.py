@@ -72,17 +72,25 @@ st.markdown("_")
 
 #-------------------------------------Histograma------------------------------------------------
 st.sidebar.title("Controles de graficas de barras")
-
-fig, ax=plt.subplots()
-ax.hist(load_data(500).Price)
+datasave=load_data(500)
+sidebar.title("Graficas:")
+st.header("Histograma")
 agree = sidebar.checkbox("Clic para ver histograma")
 if agree:
-    st.header("Precio de los comics")
-    st.pyplot(fig)
+    fig_genre=px.bar(datasave,
+                    x=datasave.Price,
+                    y=datasave.index, #index es para que cuente la cantidad total
+                    orientation="v",
+                    title="Cantidad de canciones que hay por genero",
+                    labels=dict(name_employee="Employee Name", 
+performance_score="Performance Score"),
+                    color_discrete_sequence=["#7ECBB4"],
+                    template="plotly_white")
+    st.plotly_chart(fig_genre)
     st.markdown("En este histograma podemos ver la variación de los precios que tienen los comics,\
                  precios que van desde los comics gratis hasta comics de $7.99. los comics que vemos\
-                 son los mas comunes de ver son los que están entre los precios de 3.99 y 2.99, seguidos\
-                 de los comics gratis.")
+                 son los mas comunes de ver son los que están entre los precios de 3.99 y los gratis, seguidos\
+                 de los comics de $2.99.")
 #---------------------------------------grafica de barras---------------------------------------
 
 data=load_data(500)
