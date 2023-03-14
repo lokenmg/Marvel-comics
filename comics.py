@@ -88,9 +88,9 @@ performance_score="Performance Score"),
                     template="plotly_white")
     st.plotly_chart(fig_genre)
     st.markdown("En este histograma podemos ver la variación de los precios que tienen los comics,\
-                 precios que van desde los comics gratis hasta comics de $7.99. los comics que vemos\
-                 son los mas comunes de ver son los que están entre los precios de 3.99 y los gratis, seguidos\
-                 de los comics de $2.99.")
+                 precios que van desde los comics gratis hasta comics de 7.99 los comics  mas \
+                 comunes de ver son los que están entre los precios de 3.99 y los gratis, seguidos\
+                 de los comics de 2.99")
 #---------------------------------------grafica de barras---------------------------------------
 
 data=load_data(500)
