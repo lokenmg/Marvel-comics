@@ -85,7 +85,7 @@ if agree:
                  de los comics gratis.")
 #---------------------------------------grafica de barras---------------------------------------
 
-data=load_data(102)
+data=load_data(500)
 fig2, ax2=plt.subplots()
 x_pos= data['Price']
 y_pos= data['cover_artist']
